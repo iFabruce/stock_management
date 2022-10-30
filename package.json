@@ -1,5 +1,5 @@
 {
-  "name": "gestion_stock",
+  "name": "stock_management",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
