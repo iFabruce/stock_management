@@ -1,0 +1,36 @@
+body{
+    font-family: roboto;
+}
+.leftSide{
+    background-image: url('../images/pp.png');
+    height: 100vh;
+    box-shadow: 6px -1px 6px -4px rgba(0,0,0,0.42);
+-webkit-box-shadow: 6px -1px 6px -4px rgba(0,0,0,0.42);
+-moz-box-shadow: 6px -1px 6px -4px rgba(0,0,0,0.42);
+}
+.header{
+    font-weight: 600;
+    letter-spacing: 0.5vw;
+    color: #595FF1;
+}
+.image{ 
+    margin-top: 15%;
+   border-radius: 10px;
+}
+.rightSide{
+    padding-top: 20%;
+    padding-left: 25%;
+}
+.btn{
+    /* background: #595FF1; */
+    text-transform: unset !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.1vw !important;
+}
+.form{
+    padding-top:10%;
+ 
+}
+.textField{
+    width: 250px
+}
