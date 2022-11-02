@@ -1,7 +1,7 @@
 import React from 'react'
 import Grid from '@mui/material/Grid'
-import './assets/css/Login.css'
-import pic from './assets/images/pp.png'
+import '../assets/css/Login.css'
+import pic from '../assets/images/pp.png'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
 
