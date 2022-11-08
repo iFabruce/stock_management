@@ -24,20 +24,13 @@ export default function Dashboard() {
                     <li><a href="#">Submenu 1-2</a></li>
                   </ul>
 	          </li>
-	          <li class="nav-item">
-            <input id="check01" type="checkbox" name="menu" />
-                <label for="check01">Menu 2</label>
-                  <ul class="submenu">
-                    <li><a href="#">Submenu 2-1</a></li>
-                    <li><a href="#">Submenu 2-2</a></li>
-                  </ul>
-	          </li>
+	          
 	     
 	          <li class="nav-item">
-              <a href="#">Menu 3</a>
+              <a href="#">Menu 2</a>
 	          </li>
 	          <li class="nav-item">
-              <a href="#">Menu 4</a>
+              <a href="#">Menu 3</a>
 	          </li>
 	        </ul>
 
