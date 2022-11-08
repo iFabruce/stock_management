@@ -1,10 +1,13 @@
 import React from 'react'
 import '../assets/css/bootstrap.min.css'
 import '../assets/css/style.css'
+import { useNavigate } from 'react-router-dom';
 
 
 
 export default function Dashboard() {
+  const navigate = useNavigate();
+
   return (
     <div>
       	<div class="wrapper d-flex align-items-stretch">
@@ -15,21 +18,26 @@ export default function Dashboard() {
 	        <ul class="navbar-nav" >
 	          <li class="nav-item active">
                 <input id="check01" type="checkbox" name="menu" />
-                <label for="check01">Menu</label>
-                <ul class="submenu">
-                <li><a href="#">Item 1</a></li>
-                <li><a href="#">Item 2</a></li>
-                </ul>
+                <label for="check01">Menu 1</label>
+                  <ul class="submenu">
+                    <li><a href="#">Submenu 1-1</a></li>
+                    <li><a href="#">Submenu 1-2</a></li>
+                  </ul>
 	          </li>
 	          <li class="nav-item">
-	              <a href="#">About</a>
+            <input id="check01" type="checkbox" name="menu" />
+                <label for="check01">Menu 2</label>
+                  <ul class="submenu">
+                    <li><a href="#">Submenu 2-1</a></li>
+                    <li><a href="#">Submenu 2-2</a></li>
+                  </ul>
 	          </li>
 	     
 	          <li class="nav-item">
-              <a href="#">Portfolio</a>
+              <a href="#">Menu 3</a>
 	          </li>
 	          <li class="nav-item">
-              <a href="#">Contact</a>
+              <a href="#">Menu 4</a>
 	          </li>
 	        </ul>
 
