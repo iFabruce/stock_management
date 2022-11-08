@@ -381,10 +381,10 @@ mark,
   padding: 0.2em;
   background-color: #fcf8e3; }
 
-.active, .btn:hover {
+/* .active, .btn:hover {
   background-color: lightgrey;
   color: white;
-}
+} */
 
 
 .list-unstyled {
