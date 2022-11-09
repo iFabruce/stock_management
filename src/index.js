@@ -2,8 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import Login from './pages/Login.jsx';
-import Dashboard from './pages/Dashboard.jsx';
+import Dashboard from './pages/Save.jsx';
 import Register from './pages/Register.jsx';
+
 
 
 import reportWebVitals from './reportWebVitals';
@@ -17,7 +18,6 @@ root.render(
         <Route exact path='/' element={<Login/>}/>
         <Route path='/dashboard' element={<Dashboard/>}/>
         <Route path='/register' element={<Register/>}/>
-        
       </Routes>
     </BrowserRouter>    
   </React.StrictMode>
