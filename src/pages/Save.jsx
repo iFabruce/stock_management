@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 
-export default function Dashboard() {
+export default function Save() {
   const navigate = useNavigate();
 
   return (
