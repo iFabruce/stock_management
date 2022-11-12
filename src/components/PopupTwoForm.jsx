@@ -7,6 +7,8 @@ import DialogTitle from '@mui/material/DialogTitle';
 import {Select,FormControl,MenuItem, TextField, TextareaAutosize, InputLabel} from '@mui/material'
 import { useState } from 'react';
 import Button from './Button'
+import FormDialog from './FormDialog'
+
 
 export default function PopupTwoForm(props) {
   const [nom, setNom] = useState() 
@@ -32,15 +34,28 @@ export default function PopupTwoForm(props) {
                     value={nom}
                     onChange={e => {setNom(e.target.value)}}
                 >
-                    <MenuItem value={'A'}>Date</MenuItem>
-                    <MenuItem value={'B'}>Nom</MenuItem>
+                    <MenuItem value={'A'}>A</MenuItem>
+                    <MenuItem value={'B'}>B</MenuItem>
                 </Select>
                 
             </FormControl> <br /> <br />
-                    
+
+            <FormControl style={{marginTop: '2%', width:'230px'}}>
+            <InputLabel>{props.label2}</InputLabel>
+                <Select
+                    value={nom}
+                    onChange={e => {setNom(e.target.value)}}
+                >
+                    <MenuItem value={'A'}>XL</MenuItem>
+                    <MenuItem value={'B'}>M</MenuItem>
+                    <MenuItem value={'B'}>S</MenuItem>
+                </Select>
+                    <FormDialog title="Ajouter une nouvelle taille ou pointure" label="Taille ou pointure" text="nouvelle taile ou pointure"/>
+                
+            </FormControl> <br /> <br />      
            <TextField
             type="number"
-            label={props.label2}
+            label={props.label3}
             variant="outlined"
           />
 

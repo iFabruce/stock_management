@@ -6,6 +6,8 @@ import Dashboard from './views/Dashboard';
 import Register from './views/Register';
 import AjoutArticle from './views/AjoutArticle';
 import EtatStock from './views/EtatStock';
+import ListeArticle from './views/ListeArticle';
+
 
 
 
@@ -19,10 +21,12 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route exact path='/' element={<Login/>}/>
+        <Route path='/register' element={<Register/>}/>
         <Route path='/dashboard' element={<Dashboard/>}/>
         <Route path='/ajoutArticle' element={<AjoutArticle/>}/>
         <Route path='/etatStock' element={<EtatStock/>}/>
-        <Route path='/register' element={<Register/>}/>
+        <Route path='/listeArticle' element={<ListeArticle/>}/>
+
       </Routes>
     </BrowserRouter>    
   </React.StrictMode>
