@@ -17,11 +17,14 @@ export default function Dashboard() {
         <nav class="navbar navbar-expand-sm navbar-default">
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active">
+                    <li>
                         <a href="index.html"><i class="menu-icon fa fa-laptop"></i>General </a>
                     </li>
-                    <li class="active">
-                        <a href="#" onClick={ navigate('/ajoutArticle')}><i class="menu-icon fa fa-laptop"></i>Ajout Article </a>
+                    <li >
+                        <a href="#" onClick={ () => navigate('/ajoutArticle')}><i class="menu-icon fa fa-laptop"></i>Ajout Article </a>
+                    </li>
+                    <li >
+                        <a href="#" onClick={ () => navigate('/etatStock')}><i class="menu-icon fa fa-laptop"></i>Etat stock</a>
                     </li>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>Components</a>

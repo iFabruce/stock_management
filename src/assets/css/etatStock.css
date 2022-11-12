@@ -1,0 +1,9 @@
+body{
+    overflow: hidden;
+}
+.item{
+    padding-left: 10%;
+    padding-top: 3%;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+}

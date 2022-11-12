@@ -5,6 +5,8 @@ import Login from './views/Login';
 import Dashboard from './views/Dashboard';
 import Register from './views/Register';
 import AjoutArticle from './views/AjoutArticle';
+import EtatStock from './views/EtatStock';
+
 
 
 
@@ -19,6 +21,7 @@ root.render(
         <Route exact path='/' element={<Login/>}/>
         <Route path='/dashboard' element={<Dashboard/>}/>
         <Route path='/ajoutArticle' element={<AjoutArticle/>}/>
+        <Route path='/etatStock' element={<EtatStock/>}/>
         <Route path='/register' element={<Register/>}/>
       </Routes>
     </BrowserRouter>    

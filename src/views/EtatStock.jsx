@@ -1,17 +1,13 @@
 import React from 'react'
 import '../assets/css/bootstrap.min.css'
 import '../assets/css/style.css'
-import '../assets/css/ajoutArticle.css'
-import FormDialog from  '../components/FormDialog'
-
-
-// import '../assets/css/cs-skin-elastic.css'
-
+import '../assets/css/etatStock.css'
 import { useNavigate } from 'react-router-dom';
-import {Grid, Paper, Select,FormControl,MenuItem, TextField, TextareaAutosize, InputLabel, Button} from '@mui/material'
+import {Grid, Paper, Select,FormControl,MenuItem, TextField, TextareaAutosize, InputLabel} from '@mui/material'
 import { useState } from 'react';
-
-
+import Button from '../components/Button'
+import Table from  '../components/Table'
+import PopupTwoForm from  '../components/PopupTwoForm'
 
 
 export default function AjoutProduit() {
@@ -28,11 +24,11 @@ export default function AjoutProduit() {
                     <li >
                         <a href="index.html"><i class="menu-icon fa fa-laptop"></i>General </a>
                     </li>
-                    <li >
+                    <li>
                         <a href="#" onClick={ () => navigate('/ajoutArticle')}><i class="menu-icon fa fa-laptop"></i>Ajout Article </a>
                     </li>
-                    <li >
-                        <a href="#" onClick={  () => navigate('/etatStock')}><i class="menu-icon fa fa-laptop"></i>Etat stock</a>
+                    <li>
+                        <a href="#" onClick={ () => navigate('/etatStock')}><i class="menu-icon fa fa-laptop"></i>Etat stock</a>
                     </li>
                     <li class="menu-title">UI elements</li>{/* <!-- /.menu-title --> */}
                     <li class="menu-item-has-children dropdown">
@@ -142,81 +138,44 @@ export default function AjoutProduit() {
         
       <div className="content">
         <Grid  container spacing={1}>
-            <Grid item md={6} >
-                <Paper className="item item-left">
-                    <h4>Ajout Article</h4> <br />
-                    <InputLabel>Nom</InputLabel>
-                    <TextField
-                        onChange={ e => setNom(e.target.value)}
-                    /> <br/><br/>
-
-                     <InputLabel>Description</InputLabel>
-                    <TextareaAutosize
+            <Grid item md={12} >
+                <Paper className="item">
+                    <h4>Etat de stock</h4>
+                    <PopupTwoForm title="Ajout quantité" text="Ajout quantité" label1="Article" label2='Quantité' />
+                  
+                 <br />
+                    <FormControl style={{marginTop: '2%', width:'230px'}}>
+                    <InputLabel>Trier par</InputLabel>
+                        <Select
+                            value={nom}
+                            onChange={e => {setNom(e.target.value)}}
+                        >
+                            <MenuItem value={'A'}>Date</MenuItem>
+                            <MenuItem value={'B'}>Nom</MenuItem>
+                        </Select>
                         
-                        onChange={e => {setNom(e.target.value)}}
-                        minRows={3}
-                        defaultValue=""
-                        style={{ width: 250, opacity: '.8' }}
-                    /><br/><br/>
-
-                     <InputLabel>Prix</InputLabel>
-                     <TextField
+                    </FormControl> <br /> <br />
+                    
+                    <FormControl style={{marginTop: '2%', width:'230px'}}>
+                     <InputLabel>Ordre</InputLabel>
+                        
+                        <Select
                        
-                        onChange={ e => setNom(e.target.value)}
-                    /><br/><br/>
+                            value={nom}
+                            onChange={e => {setNom(e.target.value)}}
+                        >
+                            <MenuItem value={'A'}>Ascendant</MenuItem>
+                            <MenuItem value={'B'}>Descendant</MenuItem>
+                        </Select>
+                    </FormControl> <br /> <br />
 
-                     <InputLabel>StockMin</InputLabel>
-                     <TextField
-                      
-                        onChange={ e => setNom(e.target.value)}
-                    /> <br />
-                    <Button variant="contained" className="mui-button">
-                      Enregistrer
-                    </Button>
+                    <Table/>
+
+                  
                 </Paper>
 
             </Grid>
-            <Grid item md={6}>
-                <Paper className="item item-right">
-                    <FormControl style={{marginTop: '2%', width:'230px'}}>
-                        <InputLabel>Catégorie</InputLabel>
-                        <Select
-                            value={nom}
-                            onChange={e => {setNom(e.target.value)}}
-                        >
-                            <MenuItem value={'A'}>A</MenuItem>
-                            <MenuItem value={'B'}>B</MenuItem>
-                        </Select>
-                        <FormDialog title="Ajouter une nouvelle catégorie" label="Catégorie" text="nouvelle catégorie"/>
-                    </FormControl> <br /> <br />
-
-                    <FormControl style={{marginTop: '2%', width:'230px'}}>
-                        <InputLabel>Marque</InputLabel>
-                        <Select
-                            value={nom}
-                            onChange={e => {setNom(e.target.value)}}
-                        >
-                            <MenuItem value={'A'}>A</MenuItem>
-                            <MenuItem value={'B'}>B</MenuItem>
-                        </Select>
-                        <FormDialog title="Ajouter une nouvelle marque" label="Marque" text="nouvelle marque"/>
-
-                    </FormControl> <br /> <br />
-
-                    <FormControl style={{marginTop: '2%', width:'230px'}}>
-                        <InputLabel>Couleur</InputLabel>
-                        <Select
-                            value={nom}
-                            onChange={e => {setNom(e.target.value)}}
-                        >
-                            <MenuItem value={'A'}>A</MenuItem>
-                            <MenuItem value={'B'}>B</MenuItem>
-                        </Select>
-                        <FormDialog title="Ajouter une nouvelle couleur" label="Couleur" text="nouvelle couleur"/>
-
-                    </FormControl> <br /> <br />
-                </Paper>
-            </Grid>
+            
         </Grid>
       </div>
       
