@@ -9,6 +9,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import { useNavigate } from 'react-router-dom';
 import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid'
 
 
 
@@ -35,7 +36,7 @@ export default function Dashboard() {
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav" style={{paddingTop: '10%'}}>
                     <li>
-                        <a href="index.html"><i class="menu-icon fa fa-home"></i>General </a>
+                        <a href="#" onClick={ () => navigate('/dashboard')}><i class="menu-icon fa fa-home"></i>General </a>
                     </li> <br />
                     <li >
                         <a href="#" onClick={ () => navigate('/ajoutArticle')}><i class="menu-icon fa fa-laptop"></i>Ajout Article </a>
@@ -43,10 +44,15 @@ export default function Dashboard() {
                     <li >
                         <a href="#" onClick={ () => navigate('/etatStock')}><i class="menu-icon fa fa-bar-chart"></i>Etat stock</a>
                     </li><br />
-                    <li >
+                     <li >
                         <a href="#" onClick={ () => navigate('/listeArticle')}><i class="menu-icon fa fa-table"></i>Liste Article</a>
                     </li><br />
-                   
+
+                    <li >
+                        <a href="#" onClick={ () => navigate('/commande')}><i class="menu-icon fa fa-table"></i>Commande</a>
+                    </li><br />
+
+               
                    
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Forms</a>
@@ -55,8 +61,6 @@ export default function Dashboard() {
                             <li><i class="menu-icon fa fa-th"></i><a href="forms-advanced.html">Advanced Form</a></li>
                         </ul>
                     </li>
-
-                   
                 </ul>
             </div>{/* <!-- /.navbar-collapse --> */}
         </nav>
@@ -95,6 +99,8 @@ export default function Dashboard() {
             </div>
         </header>
         
+      <Grid container spacing={0}>
+        <Grid item md={12}>
       <div className="content">
         <div className="row">
         <div class="col-lg-3 col-md-6">
@@ -171,6 +177,8 @@ export default function Dashboard() {
                     </div>
         </div>
       </div>
+            <Paper className="item">
+
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
@@ -196,6 +204,9 @@ export default function Dashboard() {
           </TableBody>
         </Table>
       </TableContainer>
+            </Paper>
+        </Grid>
+      </Grid>
       </div>
     </div>
   )

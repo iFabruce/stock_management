@@ -7,6 +7,8 @@ import Register from './views/Register';
 import AjoutArticle from './views/AjoutArticle';
 import EtatStock from './views/EtatStock';
 import ListeArticle from './views/ListeArticle';
+import Commande from './views/Commande';
+
 
 
 
@@ -26,6 +28,8 @@ root.render(
         <Route path='/ajoutArticle' element={<AjoutArticle/>}/>
         <Route path='/etatStock' element={<EtatStock/>}/>
         <Route path='/listeArticle' element={<ListeArticle/>}/>
+        <Route path='/commande' element={<Commande/>}/>
+
 
       </Routes>
     </BrowserRouter>    

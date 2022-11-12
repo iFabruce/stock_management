@@ -14,7 +14,7 @@ export default function Save() {
 			<nav id="sidebar">
 		
 				<div class="p-4 pt-5">
-		  		<h1><a href="index.html" class="logo">USER</a></h1>
+		  		<h1><a href="#" onClick={ () => navigate('/dashboard')} class="logo">USER</a></h1>
 	        <ul class="navbar-nav" >
 	          <li class="nav-item active">
                 <input id="check01" type="checkbox" name="menu" />

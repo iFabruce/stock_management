@@ -48,7 +48,7 @@ export default function ListeArticle() {
             <div id="main-menu" class="main-menu collapse navbar-collapse">
             <ul class="nav navbar-nav" style={{paddingTop: '10%'}}>
                     <li>
-                        <a href="index.html"><i class="menu-icon fa fa-home"></i>General </a>
+                        <a href="#" onClick={ () => navigate('/dashboard')}><i class="menu-icon fa fa-home"></i>General </a>
                     </li> <br />
                     <li >
                         <a href="#" onClick={ () => navigate('/ajoutArticle')}><i class="menu-icon fa fa-laptop"></i>Ajout Article </a>
@@ -56,8 +56,12 @@ export default function ListeArticle() {
                     <li >
                         <a href="#" onClick={ () => navigate('/etatStock')}><i class="menu-icon fa fa-bar-chart"></i>Etat stock</a>
                     </li><br />
-                    <li >
+                     <li >
                         <a href="#" onClick={ () => navigate('/listeArticle')}><i class="menu-icon fa fa-table"></i>Liste Article</a>
+                    </li><br />
+
+                    <li >
+                        <a href="#" onClick={ () => navigate('/commande')}><i class="menu-icon fa fa-table"></i>Commande</a>
                     </li><br />
                    
                    
