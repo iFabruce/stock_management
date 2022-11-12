@@ -1,0 +1,16 @@
+.item{
+    height: 100vh;
+    padding: 10%;
+}
+.item h4{
+    font-weight: 600;
+    letter-spacing: .2vw;
+}
+.item-right{
+    padding-top: 25%;
+}
+.mui-button{
+    margin-top: 10% !important;
+    text-transform: unset !important;
+    background: #595FF1 !important;
+}
