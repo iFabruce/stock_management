@@ -22,7 +22,7 @@ function createData(ref, nom, image, prix) {
   
  
   
-export default function ListeArticle() {
+export default function ListeClient() {
     const [isHovering, setIsHovering] = useState(false);
 
   const handleMouseOver = () => {
@@ -34,11 +34,11 @@ export default function ListeArticle() {
   };
   const navigate = useNavigate();
   const rows = [
-    createData('REF-001','Produit1', 'image', 1000),
-    createData('REF-002','Produit1', 'image', 1000),
-    createData('REF-003','Produit1', 'image', 1000),
-    createData('REF-004','Produit1', 'image', 1000),
-    createData('REF-005','Produit1', 'image', 1000)
+    createData('ClientABC','0341234567', 'client@email.com', 'A'),
+    createData('ClientABC','0341234567', 'client@email.com', 'A'),
+    createData('ClientABC','0341234567', 'client@email.com', 'A'),
+    createData('ClientABC','0341234567', 'client@email.com', 'A'),
+    createData('ClientABC','0341234567', 'client@email.com', 'A')
   ];
   return (
     <div>
@@ -110,17 +110,18 @@ export default function ListeArticle() {
         </header>
         
       <Grid container spacing={0}>
-        <Grid item md={8}>
+        <Grid item md={12}>
             <Paper style={{width: '100%' , height:'100vh',padding: '5%'}}>
+            <h4 >Liste client</h4> <br />
             <TableContainer component={Paper}>
                 <Table sx={{ minWidth: 650 }} aria-label="simple table">
                 <TableHead>
                     <TableRow>
                         
-                    <TableCell align="center" style={{fontWeight:'600'}}>Référence</TableCell>
                     <TableCell align="center" style={{fontWeight:'600'}}>Nom</TableCell>
-                    <TableCell align="center" style={{fontWeight:'600'}}>Image</TableCell>
-                    <TableCell align="center" style={{fontWeight:'600'}}>Prix</TableCell>
+                    <TableCell align="center" style={{fontWeight:'600'}}>Numero de téléphone</TableCell>
+                    <TableCell align="center" style={{fontWeight:'600'}}>Email</TableCell>
+                    <TableCell align="center" style={{fontWeight:'600'}}>Type de client</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -144,55 +145,7 @@ export default function ListeArticle() {
             </TableContainer>
             </Paper>
         </Grid>
-        <Grid item md={4}>
-            <Paper style={{width: '100%' , height:'100vh', padding: '10%'}}>
-                {isHovering &&  
-                            <div className='hovering-box' style={{width:'250px', height: '250px'}}>
-                                <h4>REFERENCE XXX</h4> <br />
-                                <TableContainer component={Paper}>
-                <Table md={{ width: '100%' }} aria-label="simple table">
-                <TableHead>
-                    <TableRow>
-                        
-                    <TableCell align="center" style={{fontWeight:'600'}}>Pointure</TableCell>
-                    <TableCell align="center" style={{fontWeight:'600'}}>Stock disponible</TableCell>
-                    </TableRow>
-                </TableHead>
-                <TableBody>
-                
-                   
-                    <TableRow
-                        md={{ '&:last-child td, &:last-child th': { border: 1 } }}
-                        >
-                        <TableCell align="center">38</TableCell>
-                        <TableCell align="center">1</TableCell>
-                      
-                    </TableRow>
-                    <TableRow
-                        md={{ '&:last-child td, &:last-child th': { border: 1 } }}
-                      > 
-                        
-                        <TableCell align="center">39</TableCell>
-                        <TableCell align="center">12</TableCell>
-                      
-                    </TableRow>
-                    <TableRow
-                        md={{ '&:last-child td, &:last-child th': { border: 1 } }}
-                      > 
-                        
-                        <TableCell align="center">40</TableCell>
-                        <TableCell align="center">5</TableCell>
-                      
-                    </TableRow>
-                
-                </TableBody>
-                </Table>
-            </TableContainer>
-
-                            </div>
-                }
-            </Paper>
-        </Grid>
+        
       </Grid>
       </div>
     </div>

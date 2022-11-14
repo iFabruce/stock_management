@@ -1,20 +1,27 @@
 import React from 'react'
-import Grid from '@mui/material/Grid'
-import InputLabel from '@mui/material/InputLabel'
-import TextField from '@mui/material/TextField'
-import '../assets/css/Commande.css'
-import '../assets/css/Commande.css'
-import Button from '../components/Button'
-import { Input } from '@mui/material'
+import '../assets/css/bootstrap.min.css'
+import '../assets/css/style.css'
+import '../assets/css/ajoutClient.css'
+import FormDialog from  '../components/FormDialog'
+
+
+// import '../assets/css/cs-skin-elastic.css'
+
 import { useNavigate } from 'react-router-dom';
+import {Grid, Paper, Select,FormControl,MenuItem, TextField, TextareaAutosize, InputLabel, Button} from '@mui/material'
+import { useState } from 'react';
 
 
-const Commande = () => {
+
+
+export default function AjoutArticle() {
   const navigate = useNavigate();
+  const [nom, setNom] = useState() 
 
   return (
     <div>
-<aside id="left-panel" class="left-panel" style={{height: '100%'}}>
+       {/* <!-- Left Panel --> */}
+      <aside id="left-panel" class="left-panel" style={{height: '100%'}}>
         <nav class="navbar navbar-expand-sm navbar-default">
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav" style={{paddingTop: '10%'}}>
@@ -30,8 +37,15 @@ const Commande = () => {
                     <div class="dropdown">
                         <li class="dropbtn">Articles</li>
                         <div class="dropdown-content">
-                            <a href="#" onClick={ () => navigate('/ajoutArticle')}>Ajout article</a>
-                            <a href="#" onClick={ () => navigate('/listeArticle')}>Liste Article</a>
+                            <li  onClick={ () => navigate('/ajoutArticle')}>Ajout article</li>
+                            <li onClick={ () => navigate('/listeArticle')}>Liste article</li>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <li class="dropbtn">Clients</li>
+                        <div class="dropdown-content">
+                            <li  onClick={ () => navigate('/ajoutClient')}>Ajout client</li>
+                            <li onClick={ () => navigate('/listeClient')}>Liste client</li>
                         </div>
                     </div>
 
@@ -39,7 +53,6 @@ const Commande = () => {
             </div>{/* <!-- /.navbar-collapse --> */}
         </nav>
     </aside>
-
 
     <div id="right-panel" className="right-panel">
     <header id="header" class="header">
@@ -74,68 +87,48 @@ const Commande = () => {
         </header>
         
       <div className="content">
-      <Grid container spacing={0}>
-        <Grid item  md={6} >
-          <div className='autocompletion'>
-          <h2 id="title">Commander un ou des article(s):</h2> <br />
-          <div id="search"><InputLabel >Recherchez ici vos articles:</InputLabel><br /> <TextField className="text-field"
-              placeholder='ex: t-shirt...'
-            //   value={text} 
-            //   onChange={ e => onChangeHandler(e.target.value)}
-            />
-          {/* {suggests && suggests.map( (suggest,i) => 
-            <div className="suggest-list" key={i} onClick={ () => onSuggestHandler(suggest.id,suggest.nom)}>{suggest.nom}</div>
-          )}
-       */}
-           
-            <p className='rounded' >Vetement noir</p> <br />
-            <TextField
-              label="Quantité"
-              type="number"
-            //   onChange={}
-            /> 
-            <Button text="Ajouter"
-                //   onClick={submit}
-            style={{width: '25%'}}/> 
-            </div>
-          </div>
-        </Grid>
-        <Grid item  md={6} >
-          <div className='panier'>
-            <h4>Panier</h4>
-          <ul >
-        {/* {panier && panier.map( pp =>  */}
-          
-          <li  style={{borderRadius: '5px'}}>  <div id="item-name"><p> Article 1</p><p> Prix:  2000 Ar</p></div> <div id="item-quantity"><p>Quantite</p>  <Input style={{background:'white',width:'70px', padding:'3%', height: '25px', marginTop:'5%'}} type="number" min="1"  
-        //   value={pp.quantite} onChange={(e) => {dispatch(changeItemValue({id: pp.id, value: e.target.value}))} }
-         />
-          <a href="#" 
-        //   onClick={ () => dispatch(deleteItem(pp.id))}
-           style={{color: 'white'}}>Supprimer</a>
-           
-           
-          </div>
+        <Grid  container spacing={1}>
+            <Grid item md={12} >
+                <Paper className="item-center">
+                    <h4>Ajout Client</h4> <br />
+                    <InputLabel>Nom</InputLabel>
+                    <TextField
+                        onChange={ e => setNom(e.target.value)}
+                    /> <br/><br/>
 
-          </li>  
-        {/* )} */}
-      </ul>
-        <h5 style={{margin: '5%'}}>Total: 1000 Ar</h5>
-          </div>
-      <div className="button"><Button text="Valider"
-    //   onClick={submit}
-       style={{width: '25%'}}>  </Button></div>
+                    <InputLabel>Numéro de téléphone</InputLabel>
+                    <TextField
+                        onChange={ e => setNom(e.target.value)}
+                    /> <br/><br/>
 
+                     <InputLabel>Email</InputLabel>
+                     <TextField
+                        type="email"
+                        onChange={ e => setNom(e.target.value)}
+                    /><br/><br/>
+
+                    <FormControl style={{marginTop: '2%', width:'230px'}}>
+                        <InputLabel>Type de client</InputLabel>
+                        <Select
+                            value={nom}
+                            onChange={e => {setNom(e.target.value)}}
+                        >
+                            <MenuItem value={'A'}>A</MenuItem>
+                            <MenuItem value={'B'}>B</MenuItem>
+                        </Select>
+                    </FormControl> <br /> <br />
+
+                    <Button variant="contained" className="mui-button">
+                      Enregistrer
+                    </Button>
+                </Paper>
+
+            </Grid>
+           
         </Grid>
-      </Grid>
       </div>
       
       </div>
-
-
-        
-         
     </div>
   )
 }
-
-export default Commande

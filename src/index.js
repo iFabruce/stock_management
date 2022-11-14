@@ -8,6 +8,10 @@ import AjoutArticle from './views/AjoutArticle';
 import EtatStock from './views/EtatStock';
 import ListeArticle from './views/ListeArticle';
 import Commande from './views/Commande';
+import AjoutClient from './views/AjoutClient';
+import ListeClient from './views/ListeClient';
+
+
 
 
 
@@ -29,6 +33,9 @@ root.render(
         <Route path='/etatStock' element={<EtatStock/>}/>
         <Route path='/listeArticle' element={<ListeArticle/>}/>
         <Route path='/commande' element={<Commande/>}/>
+        <Route path='/ajoutClient' element={<AjoutClient/>}/>
+        <Route path='/listeClient' element={<ListeClient/>}/>
+
 
 
       </Routes>

@@ -1,0 +1,15 @@
+.item-center{
+    height: 100vh;
+    padding-top: 2%;
+    padding-left: 30%;
+    
+}
+.item-center h4{
+    font-weight: 600;
+}
+
+.mui-button{
+    margin-top: 10% !important;
+    text-transform: unset !important;
+    background: #595FF1 !important;
+}
