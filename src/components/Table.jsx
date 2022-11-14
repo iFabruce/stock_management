@@ -21,7 +21,7 @@ function createData(name, calories, fat, carbs, protein) {
   export default function BasicTable() {
     return (
       <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+        <Table style={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
             <TableRow>
               <TableCell align="right">Reference</TableCell>
@@ -35,7 +35,7 @@ function createData(name, calories, fat, carbs, protein) {
             {rows.map((row) => (
               <TableRow
                 key={row.name}
-                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                style={{ '&:last-child td, &:last-child th': { border: 0 } }}
               >
                 <TableCell component="th" scope="row">
                   {row.name}

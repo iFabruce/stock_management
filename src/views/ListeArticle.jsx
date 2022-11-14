@@ -113,7 +113,7 @@ export default function ListeArticle() {
         <Grid item md={8}>
             <Paper style={{width: '100%' , height:'100vh',padding: '5%'}}>
             <TableContainer component={Paper}>
-                <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                <Table style={{ minWidth: 650 }} aria-label="simple table">
                 <TableHead>
                     <TableRow>
                         

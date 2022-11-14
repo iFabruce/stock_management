@@ -10,7 +10,53 @@ import TableRow from '@mui/material/TableRow';
 import { useNavigate } from 'react-router-dom';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid'
-
+import {
+    Chart as ChartJS,
+    CategoryScale,
+    LinearScale,
+    BarElement,
+    Title,
+    Tooltip,
+    Legend,
+  } from 'chart.js';
+  import { Bar } from 'react-chartjs-2';
+  import { faker } from '@faker-js/faker';
+  
+  ChartJS.register(
+    CategoryScale,
+    LinearScale,
+    BarElement,
+    Title,
+    Tooltip,
+    Legend
+  );
+  
+  export const options = {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'top',
+      },
+      title: {
+        display: true,
+        text: 'Vente',
+      },
+    },
+  };
+  
+  const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+  
+  export const data = {
+    labels,
+    datasets: [
+      {
+        label: 'Revenue',
+        data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
+        backgroundColor: 'rgba('+faker.datatype.number({ min: 0, max: 255 })+',' +faker.datatype.number({ min: 0, max: 255 })+',' +faker.datatype.number({ min: 0, max: 255 })+',0.25)',
+      },
+     
+    ],
+  };
 
 
 function createData(client, ref, status, date) {
@@ -106,7 +152,7 @@ export default function Dashboard() {
                             <div class="card-body">
                                 <div class="stat-widget-five">
                                     <div class="stat-icon dib flat-color-1">
-                                        <i class="pe-7s-cash">R</i>
+                                        <i class="pe-7s-cash"></i>
                                     </div>
                                     <div class="stat-content">
                                         <div class="text-left dib">
@@ -123,7 +169,7 @@ export default function Dashboard() {
                             <div class="card-body">
                                 <div class="stat-widget-five">
                                     <div class="stat-icon dib flat-color-2">
-                                        <i class="pe-7s-cart">S</i>
+                                        <i class="pe-7s-cart"></i>
                                     </div>
                                     <div class="stat-content">
                                         <div class="text-left dib">
@@ -141,7 +187,7 @@ export default function Dashboard() {
                             <div class="card-body">
                                 <div class="stat-widget-five">
                                     <div class="stat-icon dib flat-color-3">
-                                        <i class="pe-7s-browser">T</i>
+                                        <i class="pe-7s-browser"></i>
                                     </div>
                                     <div class="stat-content">
                                         <div class="text-left dib">
@@ -159,7 +205,7 @@ export default function Dashboard() {
                             <div class="card-body">
                                 <div class="stat-widget-five">
                                     <div class="stat-icon dib flat-color-4">
-                                        <i class="pe-7s-users">C</i>
+                                        <i class="pe-7s-users"></i>
                                     </div>
                                     <div class="stat-content">
                                         <div class="text-left dib">
@@ -177,31 +223,7 @@ export default function Dashboard() {
       </div>
             <Paper className="item">
 
-      <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 650 }} aria-label="simple table">
-          <TableHead>
-            <TableRow>
-              <TableCell align="center" style={{fontWeight:'600'}}>Client</TableCell>
-              <TableCell align="center" style={{fontWeight:'600'}}>Référence</TableCell>
-              <TableCell align="center" style={{fontWeight:'600'}}>Status</TableCell>
-              <TableCell align="center" style={{fontWeight:'600'}}>Date</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {rows.map((row) => (
-              <TableRow
-                key={row.ref}
-                md={{ '&:last-child td, &:last-child th': { border: 1 } }}
-              >
-                <TableCell align="center">{row.client}</TableCell>
-                <TableCell align="center">{row.ref}</TableCell>
-                <TableCell align="center">{row.status}</TableCell>
-                <TableCell align="center">{row.date}</TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
+            <Bar options={options} data={data} />
             </Paper>
         </Grid>
       </Grid>

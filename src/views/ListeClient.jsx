@@ -114,7 +114,7 @@ export default function ListeClient() {
             <Paper style={{width: '100%' , height:'100vh',padding: '5%'}}>
             <h4 >Liste client</h4> <br />
             <TableContainer component={Paper}>
-                <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                <Table style={{ minWidth: 650 }} aria-label="simple table">
                 <TableHead>
                     <TableRow>
                         

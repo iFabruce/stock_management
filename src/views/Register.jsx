@@ -13,11 +13,11 @@ export default function Register() {
   return (
     <div>
         <Grid container spacing={0}>
-            <Grid item sx={12} md={6}>
+            <Grid item style={12} md={6}>
                 <div className='leftSide'>
                 </div>
             </Grid>
-            <Grid item sx={12} md={6}>
+            <Grid item style={12} md={6}>
                 <div className='rightSide'>
                     <h1 className='header'>Inscription</h1>
              
