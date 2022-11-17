@@ -104,6 +104,13 @@ export default function Dashboard() {
                             <li onClick={ () => navigate('/listeClient')}>Liste client</li>
                         </div>
                     </div>
+                    <div class="dropdown">
+                        <li class="dropbtn">Fournisseurs</li>
+                        <div class="dropdown-content">
+                            <li  onClick={ () => navigate('/ajoutFournisseur')}>Ajout fourniseur</li>
+                            <li onClick={ () => navigate('/listeFournisseur')}>Liste fourniseur</li>
+                        </div>
+                    </div>
 
                 </ul>
             </div>{/* <!-- /.navbar-collapse --> */}

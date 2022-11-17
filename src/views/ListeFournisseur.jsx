@@ -1,23 +1,45 @@
-import React from 'react'
-import '../assets/css/bootstrap.min.css'
-import '../assets/css/style.css'
-import '../assets/css/ajoutArticle.css'
-import FormDialog from  '../components/FormDialog'
-
-
-// import '../assets/css/cs-skin-elastic.css'
-
-import { useNavigate } from 'react-router-dom';
-import {Grid, Paper, Select,FormControl,MenuItem, TextField, TextareaAutosize, InputLabel, Button} from '@mui/material'
+import {React} from 'react'
 import { useState } from 'react';
 
+import '../assets/css/bootstrap.min.css'
+import '../assets/css/style.css'
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import {Grid, Select,FormControl,MenuItem, TextField, TextareaAutosize, InputLabel} from '@mui/material'
+
+import { useNavigate } from 'react-router-dom';
+import Paper from '@mui/material/Paper';
 
 
 
-export default function AjoutArticle() {
+function createData(nom, tel, mail, adresse) {
+    return {nom, tel, mail, adresse };
+  }
+  
+ 
+  
+export default function ListeFournisseur() {
+    const [isHovering, setIsHovering] = useState(false);
+
+  const handleMouseOver = () => {
+    setIsHovering(true);
+  };
+
+  const handleMouseOut = () => {
+    setIsHovering(false);
+  };
   const navigate = useNavigate();
-  const [nom, setNom] = useState() 
-
+  const rows = [
+    createData('FournisseurABC','0341234567', 'fournisseur@email.com', 'Madagascar'),
+    createData('FournisseurABC','0341234567', 'fournisseur@email.com', 'Madagascar'),
+    createData('FournisseurABC','0341234567', 'fournisseur@email.com', 'Madagascar'),
+    createData('FournisseurABC','0341234567', 'fournisseur@email.com', 'Madagascar'),
+    createData('FournisseurABC','0341234567', 'fournisseur@email.com', 'Madagascar')
+  ];
   return (
     <div>
        {/* <!-- Left Panel --> */}
@@ -94,87 +116,46 @@ export default function AjoutArticle() {
             </div>
         </header>
         
-      <div className="content">
-        <Grid  container spacing={1}>
-            <Grid item md={6} >
-                <Paper className="item item-left">
-                    <h4>Ajout Article</h4> <br />
-                    <InputLabel>Nom</InputLabel>
-                    <TextField
-                        onChange={ e => setNom(e.target.value)}
-                    /> <br/><br/>
-
-                     <InputLabel>Description</InputLabel>
-                    <TextareaAutosize
+      <Grid container spacing={0}>
+        <Grid item md={12}>
+            <Paper style={{width: '100%' , height:'100vh',padding: '5%'}}>
+            <h4 >Liste client</h4> <br />
+            <TableContainer component={Paper}>
+                <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                <TableHead>
+                    <TableRow>
                         
-                        onChange={e => {setNom(e.target.value)}}
-                        minRows={3}
-                        defaultValue=""
-                        style={{ width: 250, opacity: '.8' }}
-                    /><br/><br/>
-
-                     <InputLabel>Prix</InputLabel>
-                     <TextField
-                       
-                        onChange={ e => setNom(e.target.value)}
-                    /><br/><br/>
-
-                     <InputLabel>StockMin</InputLabel>
-                     <TextField
-                      
-                        onChange={ e => setNom(e.target.value)}
-                    /> <br />
-                    <Button variant="contained" className="mui-button">
-                      Enregistrer
-                    </Button>
-                </Paper>
-
-            </Grid>
-            <Grid item md={6}>
-                <Paper className="item item-right">
-                    <FormControl style={{marginTop: '2%', width:'230px'}}>
-                        <InputLabel>Catégorie</InputLabel>
-                        <Select
-                            value={nom}
-                            onChange={e => {setNom(e.target.value)}}
-                        >
-                            <MenuItem value={'A'}>A</MenuItem>
-                            <MenuItem value={'B'}>B</MenuItem>
-                        </Select>
-                        <FormDialog title="Ajouter une nouvelle catégorie" label="Catégorie" text="nouvelle catégorie"/>
-                    </FormControl> <br /> <br />
-
-                    <FormControl style={{marginTop: '2%', width:'230px'}}>
-                        <InputLabel>Marque</InputLabel>
-                        <Select
-                            value={nom}
-                            onChange={e => {setNom(e.target.value)}}
-                        >
-                            <MenuItem value={'A'}>A</MenuItem>
-                            <MenuItem value={'B'}>B</MenuItem>
-                        </Select>
-                        <FormDialog title="Ajouter une nouvelle marque" label="Marque" text="nouvelle marque"/>
-
-                    </FormControl> <br /> <br />
-
-                    <FormControl style={{marginTop: '2%', width:'230px'}}>
-                        <InputLabel>Couleur</InputLabel>
-                        <Select
-                            value={nom}
-                            onChange={e => {setNom(e.target.value)}}
-                        >
-                            <MenuItem value={'A'}>A</MenuItem>
-                            <MenuItem value={'B'}>B</MenuItem>
-                        </Select>
-                        <FormDialog title="Ajouter une nouvelle couleur" label="Couleur" text="nouvelle couleur"/>
-
-                    </FormControl> <br /> <br />
-                </Paper>
-            </Grid>
+                    <TableCell align="center" style={{fontWeight:'600'}}>Nom</TableCell>
+                    <TableCell align="center" style={{fontWeight:'600'}}>Numero de téléphone</TableCell>
+                    <TableCell align="center" style={{fontWeight:'600'}}>Email</TableCell>
+                    <TableCell align="center" style={{fontWeight:'600'}}>Type de client</TableCell>
+                    </TableRow>
+                </TableHead>
+                <TableBody>
+                
+                    {rows.map((row) => (
+                    <TableRow
+                        key={row.tel}
+                        md={{ '&:last-child td, &:last-child th': { border: 1 } }}
+                        onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+                        
+                        <TableCell align="center">{row.nom}</TableCell>
+                        <TableCell align="center">{row.tel}</TableCell>
+                        <TableCell align="center">{row.mail}</TableCell>
+                        <TableCell align="center">{row.adresse}</TableCell>
+                        <TableCell align="center"> <a href="#"><i class="fa-solid fa-pen-to-square"></i></a></TableCell>
+                        <TableCell align="center"><a href="#"><i class="fa-solid fa-trash"></i></a></TableCell>
+                    </TableRow>
+                    ))}
+                </TableBody>
+                </Table>
+            </TableContainer>
+            </Paper>
         </Grid>
-      </div>
-      
+        
+      </Grid>
       </div>
     </div>
+    
   )
 }

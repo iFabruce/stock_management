@@ -1,7 +1,7 @@
 import React from 'react'
 import '../assets/css/bootstrap.min.css'
 import '../assets/css/style.css'
-import '../assets/css/ajoutArticle.css'
+import '../assets/css/ajoutClient.css'
 import FormDialog from  '../components/FormDialog'
 
 
@@ -14,7 +14,7 @@ import { useState } from 'react';
 
 
 
-export default function AjoutArticle() {
+export default function AjoutFournisseur() {
   const navigate = useNavigate();
   const [nom, setNom] = useState() 
 
@@ -61,7 +61,6 @@ export default function AjoutArticle() {
         </nav>
     </aside>
 
-
     <div id="right-panel" className="right-panel">
     <header id="header" class="header">
             <div class="top-left">
@@ -96,81 +95,38 @@ export default function AjoutArticle() {
         
       <div className="content">
         <Grid  container spacing={1}>
-            <Grid item md={6} >
-                <Paper className="item item-left">
-                    <h4>Ajout Article</h4> <br />
-                    <InputLabel>Nom</InputLabel>
+            <Grid item md={12} >
+                <Paper className="item-center">
+                    <h4>Ajout Fournisseur</h4> <br />
+                    <InputLabel>Nom/Entreprise</InputLabel>
                     <TextField
                         onChange={ e => setNom(e.target.value)}
                     /> <br/><br/>
 
-                     <InputLabel>Description</InputLabel>
-                    <TextareaAutosize
-                        
-                        onChange={e => {setNom(e.target.value)}}
-                        minRows={3}
-                        defaultValue=""
-                        style={{ width: 250, opacity: '.8' }}
-                    /><br/><br/>
+                    <InputLabel>Numéro de téléphone</InputLabel>
+                    <TextField
+                        onChange={ e => setNom(e.target.value)}
+                    /> <br/><br/>
 
-                     <InputLabel>Prix</InputLabel>
+                     <InputLabel>Email</InputLabel>
                      <TextField
-                       
+                        type="email"
                         onChange={ e => setNom(e.target.value)}
                     /><br/><br/>
 
-                     <InputLabel>StockMin</InputLabel>
+                    <InputLabel>Adresse</InputLabel>
                      <TextField
-                      
+                        type="text"
                         onChange={ e => setNom(e.target.value)}
-                    /> <br />
+                    /><br/><br/>
+
                     <Button variant="contained" className="mui-button">
                       Enregistrer
                     </Button>
                 </Paper>
 
             </Grid>
-            <Grid item md={6}>
-                <Paper className="item item-right">
-                    <FormControl style={{marginTop: '2%', width:'230px'}}>
-                        <InputLabel>Catégorie</InputLabel>
-                        <Select
-                            value={nom}
-                            onChange={e => {setNom(e.target.value)}}
-                        >
-                            <MenuItem value={'A'}>A</MenuItem>
-                            <MenuItem value={'B'}>B</MenuItem>
-                        </Select>
-                        <FormDialog title="Ajouter une nouvelle catégorie" label="Catégorie" text="nouvelle catégorie"/>
-                    </FormControl> <br /> <br />
-
-                    <FormControl style={{marginTop: '2%', width:'230px'}}>
-                        <InputLabel>Marque</InputLabel>
-                        <Select
-                            value={nom}
-                            onChange={e => {setNom(e.target.value)}}
-                        >
-                            <MenuItem value={'A'}>A</MenuItem>
-                            <MenuItem value={'B'}>B</MenuItem>
-                        </Select>
-                        <FormDialog title="Ajouter une nouvelle marque" label="Marque" text="nouvelle marque"/>
-
-                    </FormControl> <br /> <br />
-
-                    <FormControl style={{marginTop: '2%', width:'230px'}}>
-                        <InputLabel>Couleur</InputLabel>
-                        <Select
-                            value={nom}
-                            onChange={e => {setNom(e.target.value)}}
-                        >
-                            <MenuItem value={'A'}>A</MenuItem>
-                            <MenuItem value={'B'}>B</MenuItem>
-                        </Select>
-                        <FormDialog title="Ajouter une nouvelle couleur" label="Couleur" text="nouvelle couleur"/>
-
-                    </FormControl> <br /> <br />
-                </Paper>
-            </Grid>
+           
         </Grid>
       </div>
       

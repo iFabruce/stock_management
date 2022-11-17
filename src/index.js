@@ -10,6 +10,8 @@ import ListeArticle from './views/ListeArticle';
 import Commande from './views/Commande';
 import AjoutClient from './views/AjoutClient';
 import ListeClient from './views/ListeClient';
+import ListeFournisseur from './views/ListeFournisseur';
+import AjoutFournisseur from './views/AjoutFournisseur';
 
 
 
@@ -35,6 +37,8 @@ root.render(
         <Route path='/commande' element={<Commande/>}/>
         <Route path='/ajoutClient' element={<AjoutClient/>}/>
         <Route path='/listeClient' element={<ListeClient/>}/>
+        <Route path='/ajoutFournisseur' element={<AjoutFournisseur/>}/>
+        <Route path='/listeFournisseur' element={<ListeFournisseur/>}/>
 
 
       </Routes>
