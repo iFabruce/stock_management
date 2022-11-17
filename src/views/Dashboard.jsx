@@ -50,7 +50,7 @@ import {
     labels,
     datasets: [
       {
-        label: 'Revenue',
+        label: 'Revenu',
         data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
         backgroundColor: 'rgba('+faker.datatype.number({ min: 0, max: 255 })+',' +faker.datatype.number({ min: 0, max: 255 })+',' +faker.datatype.number({ min: 0, max: 255 })+',0.25)',
       },

@@ -17,7 +17,7 @@ export default function EtatStock() {
   return (
     <div>
        {/* <!-- Left Panel --> */}
-       <aside id="left-panel" class="left-panel" style={{height: '100%'}}>
+      <aside id="left-panel" class="left-panel" style={{height: '100%'}}>
         <nav class="navbar navbar-expand-sm navbar-default">
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav" style={{paddingTop: '10%'}}>
@@ -33,8 +33,15 @@ export default function EtatStock() {
                     <div class="dropdown">
                         <li class="dropbtn">Articles</li>
                         <div class="dropdown-content">
-                            <a href="#" onClick={ () => navigate('/ajoutArticle')}>Ajout article</a>
-                            <a href="#" onClick={ () => navigate('/listeArticle')}>Liste Article</a>
+                            <li  onClick={ () => navigate('/ajoutArticle')}>Ajout article</li>
+                            <li onClick={ () => navigate('/listeArticle')}>Liste article</li>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <li class="dropbtn">Clients</li>
+                        <div class="dropdown-content">
+                            <li  onClick={ () => navigate('/ajoutClient')}>Ajout client</li>
+                            <li onClick={ () => navigate('/listeClient')}>Liste client</li>
                         </div>
                     </div>
 
