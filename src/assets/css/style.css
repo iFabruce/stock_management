@@ -10,7 +10,76 @@
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 * Tags: html, themplate, Ela Admin
 --------------------------------------------------------- */
+.dropbtn-notif {
+  border-radius: 50%;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  min-width: 50px;
+}
+.dropbtn-notif li{
+  /* background: black; */
+  border-radius: 100px;
+  /* padding: 16px !important; */
 
+}
+.dropdown-notif {
+  position: absolute;
+  display: inline-block;
+  margin-left: 60%;
+}
+.dropdown-notif button{
+  border-radius: 50px;
+ 
+}
+
+
+/* Show the dropdown menu on hover */
+.dropdown-notif:hover .dropdown-content {
+  display: block;
+}
+.dropdown-content-notif li{
+  color: black;
+  font-size: 12px;
+  letter-spacing: 0;
+  padding: 6%;
+  list-style-type: none;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content-notif {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 150px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+
+}
+
+/* Links inside the dropdown */
+.dropdown-content-notif a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content-notif a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown-notif:hover .dropdown-content-notif {
+  display: block;
+}
+
+
+
+
+
+/***DROPDOWN ORIGINAL*****/
 .dropbtn {
   background-color: #595FF1;
   border-radius: 5px;
@@ -1102,6 +1171,7 @@ header .form-inline {
         text-overflow: ellipsis; }
 
 .header-menu {
+ 
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

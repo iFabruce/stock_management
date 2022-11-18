@@ -40,7 +40,6 @@ root.render(
         <Route path='/ajoutFournisseur' element={<AjoutFournisseur/>}/>
         <Route path='/listeFournisseur' element={<ListeFournisseur/>}/>
 
-
       </Routes>
     </BrowserRouter>    
   </React.StrictMode>
